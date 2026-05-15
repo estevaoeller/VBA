@@ -1,4 +1,19 @@
 Sub AuditarDependentes()
+
+    ' ============================================================
+    ' Objetivo:
+    ' Rastrear e auditar as dependências (internas e externas) de 
+    ' um intervalo específico de células ("B28:N71") na aba "Opex_UE".
+    '
+    ' Ações realizadas:
+    ' 1. Cria ou limpa uma aba de relatório chamada "Auditoria".
+    ' 2. Verifica cada célula do intervalo em busca de fórmulas ou valores.
+    ' 3. Identifica células dependentes na mesma aba (internas).
+    ' 4. Identifica células dependentes em outras abas (externas).
+    ' 5. Registra o endereço, fórmula/valor e os dependentes no relatório.
+    ' 6. Aplica formatação visual (cabeçalhos, cores e auto-filtro).
+    ' ============================================================
+
     Dim wsOrigem As Worksheet
     Dim wsAudit As Worksheet
     Dim rngAudit As Range

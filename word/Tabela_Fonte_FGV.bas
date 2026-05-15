@@ -6,6 +6,19 @@ Attribute MACRO_RODAPE_NORMALIZAR.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros
 ' MACRO_RODAPE_NORMALIZAR Macro
 '
 '
+    ' ============================================================
+    ' Objetivo:
+    ' Inserir o texto da fonte e normalizar a formatação do parágrafo
+    ' de rodapé (geralmente usado logo abaixo de tabelas ou figuras).
+    '
+    ' Ações realizadas pela macro:
+    ' 1. Digita automaticamente o texto padronizado (ex: "Fonte: Elaboração Própria").
+    ' 2. Aplica a fonte e o tamanho configurados (ex: Arial Narrow, 9).
+    ' 3. Centraliza o parágrafo horizontalmente.
+    ' 4. Aplica os espaçamentos antes e depois do texto (ex: 0pt e 12pt).
+    ' 5. Remove recuos de margem e limpa formatações indesejadas de quebra de página.
+    ' ============================================================
+
     ' --- DECLARAÇÃO DAS VARIÁVEIS ---
     Dim textoFonte As String
     Dim espacamentoAntes As Single

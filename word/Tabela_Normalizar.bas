@@ -39,17 +39,17 @@ Attribute Macro_TABELA_NORMALIZAR.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros
     End If
 
     ' ------------------------------------------------------------
-    ' 2. Identifica a tabela que ser� formatada
+    ' 2. Identifica a tabela que será formatada
     ' ------------------------------------------------------------
-    ' Selection.Tables(1) pega a primeira tabela associada � sele��o atual.
-    ' Se o cursor estiver dentro de uma tabela, essa ser� a tabela usada.
+    ' Selection.Tables(1) pega a primeira tabela associada à seleção atual.
+    ' Se o cursor estiver dentro de uma tabela, essa será a tabela usada.
     Set tbl = Selection.Tables(1)
 
     ' ------------------------------------------------------------
-    ' 3. Normaliza a formata��o dos par�grafos da tabela inteira
+    ' 3. Normaliza a formatação dos parágrafos da tabela inteira
     ' ------------------------------------------------------------
-    ' Esta parte remove recuos, espa�amentos antes/depois,
-    ' define espa�amento simples e centraliza os par�grafos.
+    ' Esta parte remove recuos, espaçamentos antes/depois,
+    ' define espaçamento simples e centraliza os parágrafos.
     With tbl.Range.ParagraphFormat
         .LeftIndent = CentimetersToPoints(0)
         .RightIndent = CentimetersToPoints(0)
@@ -74,8 +74,8 @@ Attribute Macro_TABELA_NORMALIZAR.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros
     ' 4. Define a fonte da tabela inteira
     ' ------------------------------------------------------------
     ' Aplica Arial Narrow, tamanho 9,
-    ' remove it�lico e remove negrito da tabela inteira.
-    ' O negrito ser� reaplicado depois apenas ao cabe�alho.
+    ' remove itálico e remove negrito da tabela inteira.
+    ' O negrito será reaplicado depois apenas ao cabeçalho.
     With tbl.Range.Font
         .Name = "Arial Narrow"
         .Size = 9
@@ -84,30 +84,30 @@ Attribute Macro_TABELA_NORMALIZAR.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros
     End With
 
     ' ------------------------------------------------------------
-    ' 5. Centraliza verticalmente o conte�do das c�lulas
+    ' 5. Centraliza verticalmente o conteúdo das células
     ' ------------------------------------------------------------
-    ' Faz com que o texto fique no centro vertical da c�lula,
-    ' e n�o colado na parte superior ou inferior.
+    ' Faz com que o texto fique no centro vertical da célula,
+    ' e não colado na parte superior ou inferior.
     tbl.Range.Cells.VerticalAlignment = wdCellAlignVerticalCenter
 
     ' ------------------------------------------------------------
-    ' 6. Define a altura padr�o das linhas da tabela
+    ' 6. Define a altura padrão das linhas da tabela
     ' ------------------------------------------------------------
     ' Aplica altura exata de 0,5 cm para todas as linhas.
-    ' Como � altura exata, o Word pode cortar conte�do se houver texto demais.
+    ' Como é altura exata, o Word pode cortar conteúdo se houver texto demais.
     With tbl.Rows
         .HeightRule = wdRowHeightAtLeast
         .Height = CentimetersToPoints(0.5)
     End With
 
     ' ------------------------------------------------------------
-    ' 7. Formata a primeira linha como cabe�alho da tabela
+    ' 7. Formata a primeira linha como cabeçalho da tabela
     ' ------------------------------------------------------------
-    ' A primeira linha recebe tratamento espec�fico:
-    ' - repete como cabe�alho nas p�ginas seguintes;
+    ' A primeira linha recebe tratamento específico:
+    ' - repete como cabeçalho nas páginas seguintes;
     ' - tem altura de 0,9 cm;
     ' - fica em negrito;
-    ' - permanece sem it�lico;
+    ' - permanece sem itálico;
     ' - fica centralizada horizontal e verticalmente.
     With tbl.Rows(1)
         .HeadingFormat = True
@@ -127,5 +127,3 @@ Attribute Macro_TABELA_NORMALIZAR.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros
     
     
 End Sub
-
-
